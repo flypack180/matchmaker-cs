@@ -1,0 +1,112 @@
+#introduction
+import time
+
+print("//////////////////////////////////////////")
+print("//////////welcome to matchmaker///////////")
+print("//////////////////////////////////////////")
+print("///////answer these questions 1 - 5///////")
+print("///////1 being you strongly disagree//////")
+print("//////////5 being strongly agree//////////")
+print("////////////and 3 is neutral//////////////")
+print("//////////////////////////////////////////")
+print("")
+
+
+question = [
+    "the eagles are a cool football team",
+    "rock is better than rap",
+    "the movie 'the hunt for red october' is a great movie",
+    "PC is better than MAC",
+    "phillidelphia is an awesome city"
+]
+
+response = []
+
+
+def  ask_question(theQuestion):
+    return int(input(theQuestion)) 
+
+def validate(response):
+    while userrespo1 >5 :
+        print("error try again.")  
+        userrespo1=ask_question(question[0])
+
+#question 1
+userrespo1=ask_question(question[0])
+response.append(userrespo1)
+while userrespo1 >5 :
+        print("error try again.")  
+        userrespo1=ask_question(question[0])
+
+desrespo1=5
+compat1= 5- abs(userrespo1 - desrespo1)
+Wcompat1 = 5- abs(userrespo1 - desrespo1)*2
+print("compatibility for question 1 = ", compat1)
+print("wheighted compatibilty for question 1 =", Wcompat1)
+print("")
+
+#question 2
+userrespo2=ask_question(question[1])
+while  userrespo2 >5 :
+    print("error try again.")  
+    userrespo2=ask_question(question[1])
+desrespo2=3
+compat2= 5- abs(userrespo2 - desrespo2)
+Wcompat2 = 5- abs(userrespo2 - desrespo2)*1
+print("compatibility for question 2 = ", compat2)
+print("wheighted compatibilty for question 2 =", Wcompat2)
+print("")
+
+#question 3
+userrespo3=ask_question(question[2])
+while  userrespo3 >5 :
+    print("error try again.")  
+    userrespo3=ask_question(question[2])
+desrespo3=4
+compat3= 5- abs(userrespo3 - desrespo3)
+Wcompat3= 5- abs(userrespo3 - desrespo3)*1
+print("compatibilityfor question 3 = ", compat3)
+print("wheighted compatibilty for question 3 =", Wcompat3)
+print("")
+
+#question 4
+userrespo4=ask_question(question[3])
+while  userrespo4 >5 :
+    print("error try again.")  
+    userrespo4=ask_question(question[3])
+desrespo4=4
+compat4= 5- abs(userrespo4 - desrespo4)
+Wcompat4 = 5- abs(userrespo4 - desrespo4)*2
+print("compatibility for question 4 = ", compat4)
+print("wheighted compatibilty for question 4 =", Wcompat4)
+print("")
+
+#question 5
+userrespo5=ask_question(question[4])
+while  userrespo5 >5 :
+    print("error try again.")  
+    userrespo5=ask_question(question[4])
+desrespo5= 5
+compat5 = 5 - abs(userrespo5 - desrespo5)
+Wcompat5 = 5 - abs(userrespo5 - desrespo5)*3
+print("compatibilty for question 5 = ", compat5)
+print("wheighted compatibilty for question 5 =", Wcompat5)
+print("")
+
+#total compatibilty
+totalcompat=(compat1 + compat2 + compat3 + compat4 + compat5) *4
+totalWcompat=(Wcompat1 + Wcompat2 + Wcompat3 + Wcompat4 + Wcompat5) *4
+print("your total compatibility is", totalcompat, "out of 100")
+print("your wheighted compatibility is", totalWcompat, "out of 100")
+if totalcompat == 100:
+    print("Perfect match! Go birds!")
+elif 80< totalcompat <100:
+    print("We would get along just fine")
+elif 60< totalcompat <80:
+    print("I would think twice about working with you")
+elif 40< totalcompat <60:
+    print("I wouldn't aproach you")
+else:
+    print('please leave')
+    time.sleep(5)
+    print("now please")
