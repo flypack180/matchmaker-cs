@@ -33,7 +33,6 @@ def validate(response):
 
 #question 1
 userrespo1=ask_question(question[0])
-response.append(userrespo1)
 while userrespo1 >5 :
         print("error try again.")  
         userrespo1=ask_question(question[0])
